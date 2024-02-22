@@ -51,10 +51,10 @@
                                 <a href="{{ path('livre_download', {'id': livre.id}) }}"  class="btn btn-success" ></a>
 <th>{{ include('livre/_delete_form.html.twig') }}   </th>
 
-                                        //        <a href="{{ path('livre_show', {'id': livre.id}) }}" class="btn btn-success">editer</a>
+                                                {#<a href="{{ path('livre_show', {'id': livre.id}) }}" class="btn btn-success">editer</a>#}
                                                 {% endif %}
 										</td>
-										{% if app.user %} <th>{{ include('livre/_delete_form.html.twig') }}</th> {% endif %}
+										{#{% if app.user %} <th>{{ include('livre/_delete_form.html.twig') }}</th> {% endif %}#}
 									</tr>
 								</td>
 							</tbody>

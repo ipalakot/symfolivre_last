@@ -119,4 +119,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
     }
+    public function addRole($role)
+    {
+        $this->roles[] = $role;
+    
+        if ($role === 'ROLE_AUTOR') {
+            $this->addRole('ROLE_USER');
+        }
+    
+        if ($role === 'ROLE_ADMIN') {
+            $this->addRole('ROLE_AUTOR');
+        }
+    
+        return $this;
+    }
+    
 }
