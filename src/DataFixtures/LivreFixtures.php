@@ -73,7 +73,7 @@ class LivreFixtures extends Fixture
                 $randomCategory = $categoriesData[array_rand($categoriesData)];
                 $livre
                     ->setTitreLivre('Titre du livre ' . ($k + 1))
-                    ->setFichierLivre('chemin/vers/le/fichier.pdf')
+                    ->setFichierLivre('test.txt')
                     ->setAuteurLivre($users[3]) // 4ème utilisateur créé
                     ->setCategorieLivre($categorie)
                     ->setResumeLivre('Résumé du livre ' . ($k + 1))

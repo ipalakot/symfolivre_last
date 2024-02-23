@@ -1,4 +1,4 @@
-{% extends 'base-admin.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Hello LivreController!
 {% endblock %}
@@ -33,6 +33,7 @@
 								<tr>
 									<th>Id</th>
 									<th>titre</th>
+									<th>prix</th>
 									<th>auteur</th>
 									<th>actions</th>
 								</tr>
@@ -43,6 +44,8 @@
 									<tr>
 										<td>{{ livre.id }}</td>
 										<td>{{ livre.titreLivre }}</td>
+										<td>{{ livre.prixLivre }}</td>
+
 										<td>{{ livre.auteurLivre.nomUser }}</td>
 										<td>
 

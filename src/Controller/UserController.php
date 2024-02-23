@@ -22,12 +22,12 @@ class UserController extends AbstractController
     #[Route('/user', name: 'app_user_index', methods: ['GET'])]
     public function index(UserRepository $userRepository): Response
     {
-//        if ($this->isGranted('ROLE_ADMIN')) {
+        if ($this->isGranted('ROLE_ADMIN')) {
         return $this->render('user/index.html.twig', [
             'users' => $userRepository->findAll(),
         ]);
-//        }
-//  return $this->render('user/erreur.html.twig');
+        }
+  return $this->render('user/erreur.html.twig');
     }
     #[Route('/userTestAuteur', name: 'app_user_testAuteur', methods: ['GET'])]
     public function testAuteur(UserRepository $userRepository): Response
@@ -41,7 +41,7 @@ class UserController extends AbstractController
     #[Route('/user/new', name: 'app_user_new', methods: ['GET', 'POST'])]
     public function new(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, UserAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
     {
-//        if ($this->isGranted('ROLE_ADMIN')) {
+        if ($this->isGranted('ROLE_ADMIN')) {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
@@ -65,8 +65,8 @@ class UserController extends AbstractController
             'user' => $user,
             'form' => $form,
         ]);
-//        }
-//  return $this->render('user/erreur.html.twig');
+        }
+  return $this->render('user/erreur.html.twig');
     }
     #[Route('user_profile', name: 'app_user_profile', methods: ['GET'])]
     public function showProfile(Security $security): Response
